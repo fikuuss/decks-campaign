@@ -9,14 +9,37 @@ export interface IDeck {
   imageUrl: string;
 }
 
-interface IDeckListProps {
-  decks: IDeck[];
-}
+const decks: IDeck[] = [
+  {
+    id: 1,
+    title: 'Чебуреки',
+    description: 'Колода состоящая только из чебуреков',
+    imageUrl: './deck_preview.png'
+  },
+  {
+    id: 2,
+    title: 'Беляши',
+    description: 'Беляши прямо с забегаловки рядом с вокзалом',
+    imageUrl: './deck_preview.png'
+  },
+  {
+    id: 3,
+    title: 'Что-то серьёзное',
+    description: 'Колода с чем-то серьёзным внутри',
+    imageUrl: './deck_preview.png'
+  },
+  {
+    id: 4,
+    title: 'Лолы и кеки',
+    description: 'Лолы прямо как твои мемы и кеки точно такие же',
+    imageUrl: './deck_preview.png'
+  }
+];
 
-export function DeckList({decks}: IDeckListProps) {
+export function DeckList() {
   return (
     <div>
-      <H2>Коллоды</H2>
+      <H2>Колоды</H2>
       <div className="deck-list__wrapper">
         {decks.map((deck) => (
           <DeckPreview key={deck.id} deck={deck} />
